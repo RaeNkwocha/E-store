@@ -1,0 +1,47 @@
+:root {
+  --nav: black;
+  --header: #32cd32;
+  --headertext: rgb(250, 136, 155);
+}
+.grid h3 {
+  font-weight: bold;
+  color: var(--header);
+  font-size: 1.5rem;
+}
+
+@media (min-width: 961px) {
+  .hamburger {
+    display: none;
+  }
+  .grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 8rem;
+  }
+  .nav h3 {
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+  }
+  nav li {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    height: 10vh;
+    background: var(--header);
+  }
+}

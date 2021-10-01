@@ -1,0 +1,98 @@
+:root {
+  --nav: black;
+  --header: #32cd32;
+  --headertext: rgb(250, 136, 155);
+}
+.header {
+  margin: 40px;
+}
+.header-grid {
+  display: grid;
+  grid-template-columns: 40% 50%;
+  place-items: center;
+
+  gap: 6rem;
+}
+.header-grid img {
+  width: 650px;
+  height: 500px;
+}
+.grid-1 {
+  padding: 50px;
+}
+.grid-1 p {
+  font-size: 0.7rem;
+  color: var(--headertext);
+  font-weight: bold;
+}
+.grid-1 h1 {
+  font-size: 8rem;
+  color: var(--header);
+}
+.grid-1 h5 {
+  line-height: 1.5rem;
+  font-weight: 300;
+  color: var(--nav);
+  margin-bottom: 1rem;
+}
+.btn3d {
+  position: relative;
+  top: -6px;
+  border: 0;
+  transition: all 40ms linear;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 12px;
+  padding: 8px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+  -moz-outline-style: none;
+  outline: medium none;
+}
+
+.btn3d:active,
+.btn3d.active {
+  top: 2px;
+}
+
+.btn3d.btn-white {
+  color: white;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+    0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.btn3d.btn-white:active,
+.btn3d.btn-white.active {
+  color: white;
+  box-shadow: 0 0 0 1px #ebebeb inset,
+    0 0 0 1px rgba(255, 255, 255, 0.556) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.btn3d.btn-default {
+  color: white;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+    0 8px 0 0 #bebebe, 0 8px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--header);
+}
+.btn3d.btn-default:last-of-type {
+  color: white;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+    0 8px 0 0 #bebebe, 0 8px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: rgba(53, 53, 53, 0.994);
+}
+
+.btn3d.btn-default:active,
+.btn3d.btn-default.active {
+  color: #666666;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 1px 3px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
