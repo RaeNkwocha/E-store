@@ -1,7 +1,10 @@
 import React from "react";
+import Categories from "../component/Categories";
 import Header from "../component/Header";
+import HeaderTwo from "../component/HeaderTwo";
 import Main from "../component/Main";
 import Nav from "../component/Nav";
+import Newsection from "../component/Newsection";
 import Section from "../component/Section";
 
 const Home = () => {
@@ -10,12 +13,21 @@ const Home = () => {
       <header>
         <Header></Header>
       </header>
-      <nav>
+      {/* <nav>
         <Nav></Nav>
-      </nav>
-      <main>
+      </nav> */}
+      <section>
         <Section></Section>
-      </main>
+      </section>
+      <section>
+        <HeaderTwo></HeaderTwo>
+      </section>
+      <section>
+        <Categories></Categories>
+      </section>
+      <section>
+        <Newsection></Newsection>
+      </section>
     </>
   );
 };

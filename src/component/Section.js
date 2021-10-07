@@ -53,7 +53,7 @@ const Section = () => {
               Add To Cart
             </button>
           </div>
-          <div className="image-holder">
+          <div className="image-holder-2">
             <img src={fruit} alt=""></img>
           </div>
         </div>

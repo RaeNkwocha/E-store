@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import "../css/header.css";
-import image from "../images/vegetable.png";
+
+import trial from "../images/trial.jpg";
 
 const Header = () => {
   return (
@@ -25,7 +26,7 @@ const Header = () => {
             </button>
           </div>
           <div className="grid-2">
-            <img width="100%" src={image} alt=""></img>
+            <img width="100%" src={trial} alt=""></img>
           </div>
         </section>
       </header>
