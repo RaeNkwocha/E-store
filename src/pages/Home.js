@@ -1,5 +1,6 @@
 import React from "react";
 import Categories from "../component/Categories";
+import Footer from "../component/Footer";
 import Header from "../component/Header";
 import HeaderTwo from "../component/HeaderTwo";
 import Main from "../component/Main";
@@ -13,9 +14,9 @@ const Home = () => {
       <header>
         <Header></Header>
       </header>
-      {/* <nav>
+      <nav>
         <Nav></Nav>
-      </nav> */}
+      </nav>
       <section>
         <Section></Section>
       </section>
@@ -28,6 +29,9 @@ const Home = () => {
       <section>
         <Newsection></Newsection>
       </section>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </>
   );
 };

@@ -1,10 +1,14 @@
 import { Facebook, Instagram, YouTube } from "@material-ui/icons";
 import "../css/nav.css";
 import React from "react";
+import Hamburger from "./Hamburger";
 
 const Nav = () => {
   return (
     <>
+      <div className="hamburger">
+        <Hamburger></Hamburger>
+      </div>
       <nav className="nav">
         <h3>Raen.Recipies</h3>
         <div className="grid">
