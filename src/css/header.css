@@ -99,6 +99,9 @@
 }
 /* mobile */
 @media screen and (max-width: 400px) {
+  .header {
+    margin-top: 50px;
+  }
   .header-grid img {
     width: 100%;
     height: 200px;
