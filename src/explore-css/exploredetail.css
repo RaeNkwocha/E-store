@@ -62,16 +62,17 @@ body {
   .detailed-grid {
     display: flex;
     flex-direction: column;
-    padding-right: 70px;
+    padding-right: 50px;
   }
   .grid-style-2 img {
-    width: 100%;
-    margin: 10px;
+    width: 90%;
+    padding: 10px;
   }
   .inst h5 {
     padding-top: 20px;
-    width: 100%;
+    width: 90%;
     padding-left: 10px;
+    padding-right: 10px;
     line-height: 1.5rem;
   }
   .grid-style h1 {

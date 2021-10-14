@@ -19,7 +19,7 @@
 }
 @media screen and (max-width: 400px) {
   .detailed-grid-1 {
-    padding-right: 70px;
+    padding-right: 50px;
   }
 }
 @media screen and (max-width: 600px) {
