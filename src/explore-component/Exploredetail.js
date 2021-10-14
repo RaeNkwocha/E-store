@@ -239,9 +239,9 @@ const Exploredetail = ({ match }) => {
           </div>
         </section>
       </section>
-      <div className="bottom-nav">
+      {/* <div className="bottom-nav">
         <SimpleBottomNavigation></SimpleBottomNavigation>
-      </div>
+      </div> */}
       <Footer></Footer>
     </>
   );
