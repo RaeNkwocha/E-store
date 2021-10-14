@@ -42,9 +42,10 @@ const Exploremain = ({ fetchSearch, search, display }) => {
       <main className="explore-main">
         <main>
           <h5 className="top">Top searches</h5>
-          {display.length > 0 ? (
-            <section className="explore-flex">
-              {display.map((item) => {
+
+          <section className="explore-flex">
+            {display && display.length ? (
+              display.map((item) => {
                 return (
                   <Link to={`/explore/${item.idMeal}`}>
                     <Card
@@ -78,11 +79,11 @@ const Exploremain = ({ fetchSearch, search, display }) => {
                     </Card>
                   </Link>
                 );
-              })}
-            </section>
-          ) : (
-            <CircularProgress></CircularProgress>
-          )}
+              })
+            ) : (
+              <h5>result not found</h5>
+            )}
+          </section>
         </main>
         <form className="search" onSubmit={handleSubmit}>
           {" "}
@@ -109,7 +110,11 @@ const Exploremain = ({ fetchSearch, search, display }) => {
         >
           {input}
         </h3>
-        {data.length > 0 ? (
+        {data && data.length === 0 ? (
+          <>
+            <CircularProgress></CircularProgress>
+          </>
+        ) : (
           <section className="explore-flex">
             {data &&
               data.map((item) => {
@@ -148,8 +153,6 @@ const Exploremain = ({ fetchSearch, search, display }) => {
                 );
               })}
           </section>
-        ) : (
-          <CircularProgress></CircularProgress>
         )}
       </main>
       <Footer></Footer>

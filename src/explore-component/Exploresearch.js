@@ -62,7 +62,11 @@ const Exploresearch = () => {
         >
           {input}
         </h3>
-        {data.length > 0 ? (
+        {data && data.length === 0 ? (
+          <div>
+            <h5>no result</h5>
+          </div>
+        ) : (
           <section className="explore-flex-3">
             {data &&
               data.map((item) => {
@@ -102,8 +106,6 @@ const Exploresearch = () => {
                 );
               })}
           </section>
-        ) : (
-          <CircularProgress></CircularProgress>
         )}
       </main>
     </>
