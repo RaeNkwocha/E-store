@@ -10,9 +10,7 @@ import {
 import Button from "@mui/material/Button";
 import { CardActions } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import Footer from "../component/Footer";
-
-const Exploremain = ({ fetchSearch, search, display }) => {
+const Exploresearch = () => {
   const [data, setData] = useState([]);
   const [input, setInput] = useState("a");
 
@@ -24,71 +22,25 @@ const Exploremain = ({ fetchSearch, search, display }) => {
   };
   useEffect(() => {
     fetchData();
-    fetchSearch();
-  }, [input, search]);
-  console.log(data);
-
+  }, [input]);
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchData();
   };
-  // if (data.length > 0) {
-  //   data = data.filter((product) => {
-  //     return product.strMeal.match(search);
-  //   });
-  // }
   return (
     <>
-      <main className="explore-main">
-        <main>
-          <h5 className="top">Top searches</h5>
-          {display.length > 0 ? (
-            <section className="explore-flex">
-              {display.map((item) => {
-                return (
-                  <Link to={`/explore/${item.idMeal}`}>
-                    <Card
-                      key={item.idMeal}
-                      sx={{ maxWidth: 345 }}
-                      style={{ height: "400px" }}
-                    >
-                      <CardMedia
-                        component="img"
-                        alt="green iguana"
-                        height="200"
-                        image={item.strMealThumb}
-                      />
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          style={{ fontSize: "1.2rem" }}
-                          component="div"
-                        >
-                          {item.strMeal}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {item.strInstructions.substring(0, 120)}
-                        </Typography>
-                      </CardContent>
-                      <CardActions>
-                        <Button size="small">Share</Button>
-                        <Button size="small">Learn More</Button>
-                      </CardActions>
-                    </Card>
-                  </Link>
-                );
-              })}
-            </section>
-          ) : (
-            <CircularProgress></CircularProgress>
-          )}
-        </main>
+      <main>
         <form className="search" onSubmit={handleSubmit}>
           {" "}
           <label>
             {" "}
-            <h5 style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+            <h5
+              style={{
+                paddingTop: "5px",
+                paddingBottom: "5px",
+                fontWeight: "bold",
+              }}
+            >
               {" "}
               search by letter
             </h5>
@@ -96,6 +48,7 @@ const Exploremain = ({ fetchSearch, search, display }) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Search using letters"
+              style={{ backgroundColor: "whitesmoke" }}
             ></input>
           </label>
           <input type="submit" />
@@ -110,15 +63,16 @@ const Exploremain = ({ fetchSearch, search, display }) => {
           {input}
         </h3>
         {data.length > 0 ? (
-          <section className="explore-flex">
+          <section className="explore-flex-3">
             {data &&
               data.map((item) => {
                 return (
                   <Link to={`/explore/${item.idMeal}`}>
-                    <Card
+                    <div
                       key={item.idMeal}
                       sx={{ maxWidth: 345 }}
                       style={{ height: "400px" }}
+                      className="detailed-grid-1"
                     >
                       <CardMedia
                         component="img"
@@ -143,7 +97,7 @@ const Exploremain = ({ fetchSearch, search, display }) => {
                         <Button size="small">Share</Button>
                         <Button size="small">Learn More</Button>
                       </CardActions>
-                    </Card>
+                    </div>
                   </Link>
                 );
               })}
@@ -152,9 +106,8 @@ const Exploremain = ({ fetchSearch, search, display }) => {
           <CircularProgress></CircularProgress>
         )}
       </main>
-      <Footer></Footer>
     </>
   );
 };
 
-export default Exploremain;
+export default Exploresearch;

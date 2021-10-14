@@ -58,8 +58,9 @@
   .explore-nav {
     display: grid;
     width: 100%;
-    grid-template-columns: 0% 100% 0%;
+    grid-template-columns: 100%;
     gap: 1px;
+    margin-left: 3rem;
     /* margin: 20px; */
   }
   .explore-flex-2 {

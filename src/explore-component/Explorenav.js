@@ -88,11 +88,15 @@ const Explorenav = () => {
         >
           <Box
             sx={{
-              width: 650,
+              width: "100%",
               maxWidth: "100%",
             }}
           >
-            <form className="search" onSubmit={handleSearch}>
+            <form
+              style={{ display: "grid", placeItems: "center" }}
+              className="search"
+              onSubmit={handleSearch}
+            >
               <TextField
                 value={search}
                 style={{ padding: "10px" }}

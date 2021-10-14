@@ -19,7 +19,9 @@ h5 {
 }
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
 /* @media screen and (min-width: 1100px) {
   body {
     background-color: blue;

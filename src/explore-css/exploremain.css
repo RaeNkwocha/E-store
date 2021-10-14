@@ -17,6 +17,11 @@
 .search {
   margin: 8px;
 }
+@media screen and (max-width: 400px) {
+  .detailed-grid-1 {
+    padding-right: 70px;
+  }
+}
 @media screen and (max-width: 600px) {
   .explore-flex {
     display: grid;
@@ -57,5 +62,11 @@
   }
   .search {
     margin: 8px;
+  }
+  .explore-flex-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+    padding: 10px;
   }
 }
