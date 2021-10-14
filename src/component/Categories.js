@@ -1,4 +1,6 @@
+import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { NavItem } from "react-bootstrap";
 import "../css/categories.css";
 
 const Categories = () => {
@@ -13,33 +15,39 @@ const Categories = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(data);
+
   return (
     <div style={{ position: "relative" }}>
       <section className="new">
         <h2 style={{ paddingBottom: "50px", fontSize: "4rem" }}>Categories</h2>
-        <div className="categories">
-          {data.map((data) => {
-            return (
-              <div>
-                <div className="cat-holder">
-                  <img width="100%" src={data.strCategoryThumb} alt=""></img>
+        {data.length > 0 ? (
+          <div className="categories">
+            {data.map((data) => {
+              return (
+                <div key={data.idCategory}>
+                  <div className="cat-holder">
+                    <img width="100%" src={data.strCategoryThumb} alt=""></img>
+                  </div>
+                  {/* <h3>{data.strCategory}</h3> */}
+                  <button
+                    style={{
+                      backgroundColor: "transparent",
+                      backgroundRepeat: "no-repeat",
+                      color: "black",
+                    }}
+                    className="btn btn-default btn-lg btn3d"
+                  >
+                    {data.strCategory}
+                  </button>
                 </div>
-                {/* <h3>{data.strCategory}</h3> */}
-                <button
-                  style={{
-                    backgroundColor: "transparent",
-                    backgroundRepeat: "no-repeat",
-                    color: "black",
-                  }}
-                  className="btn btn-default btn-lg btn3d"
-                >
-                  {data.strCategory}
-                </button>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        ) : (
+          <h2>
+            <CircularProgress></CircularProgress>
+          </h2>
+        )}
       </section>
       {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path

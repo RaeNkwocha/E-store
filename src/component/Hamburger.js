@@ -16,31 +16,47 @@ const Hamburger = () => {
           }}
           className="bm-men"
         >
-          {/* <Link
-          style={{ listStyle: "none", textDecoration: "none", color: "black" }}
-          to="/"
-        > */}
-          <li>Home</li>
-          {/* </Link> */}
-          {/* <Link
-          to="/about"
-          style={{ listStyle: "none", textDecoration: "none", color: "black" }}
-        > */}
-          <li>About</li>
-          {/* </Link> */}
+          <Link
+            style={{
+              listStyle: "none",
+              textDecoration: "none",
+              color: "black",
+            }}
+            to="/"
+          >
+            <li>Home</li>
+          </Link>
+          <Link
+            to="/about"
+            style={{
+              listStyle: "none",
+              textDecoration: "none",
+              color: "black",
+            }}
+          >
+            <li>About</li>
+          </Link>
 
-          {/* <Link
-          to="/contact"
-          style={{ listStyle: "none", textDecoration: "none", color: "black" }}
-        > */}
-          <li>Contact</li>
-          {/* </Link> */}
-          {/* <Link
-          to="/portfolio"
-          style={{ listStyle: "none", textDecoration: "none", color: "black" }}
-        > */}
-          <li>Portfolio</li>
-          {/* </Link> */}
+          <Link
+            to="/contact"
+            style={{
+              listStyle: "none",
+              textDecoration: "none",
+              color: "black",
+            }}
+          >
+            <li>Contact</li>
+          </Link>
+          <Link
+            to="/explore"
+            style={{
+              listStyle: "none",
+              textDecoration: "none",
+              color: "black",
+            }}
+          >
+            <li>Explore</li>
+          </Link>
         </main>
       </Menu>
     </nav>
