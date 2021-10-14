@@ -70,9 +70,9 @@ body {
   }
   .inst h5 {
     padding-top: 20px;
-    width: 95%;
+    width: 90%;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 5px;
     line-height: 1.5rem;
   }
   .grid-style h1 {
