@@ -15,6 +15,7 @@
   background: #32cd32;
   height: auto;
   width: 100vw;
+  height: 100vh;
 }
 .signup-img img {
   height: auto;
@@ -26,6 +27,9 @@
     flex-direction: column-reverse;
     width: 90%;
   }
+  .main-sign {
+    height: auto;
+  }
 }
 @media screen and (max-width: 460px) {
   .signup-grid {
@@ -36,8 +40,12 @@
     background: white;
   }
   .main-sign {
-    background: white;
+    background: #32cd32;
+    height: 100vh;
 
     /* margin-top: 100px; */
+  }
+  .signup-img img {
+    width: 100%;
   }
 }

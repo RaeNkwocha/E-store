@@ -51,25 +51,27 @@ function Login() {
               <Form.Group id="e-mail">
                 <Form.Control
                   style={{
-                    width: "400px",
+                    width: "300px",
                     marginRight: "30px",
                     padding: "12px",
                   }}
                   type="e-mail"
                   ref={emailRef}
                   required
+                  placeholder="E-mail"
                 />
               </Form.Group>
               <Form.Group id="Password">
                 <Form.Control
                   style={{
-                    width: "400px",
+                    width: "300px",
                     marginTop: "30px",
                     padding: "12px",
                   }}
                   type="password"
                   ref={passwordRef}
                   required
+                  placeholder="password"
                 />
               </Form.Group>
 

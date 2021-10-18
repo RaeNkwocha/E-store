@@ -52,7 +52,7 @@ function Signup() {
               <Form.Group id="e-mail">
                 <Form.Control
                   style={{
-                    width: "400px",
+                    width: "300px",
                     padding: "12px",
                     marginRight: "30px",
                     marginLeft: "0px",
@@ -60,12 +60,13 @@ function Signup() {
                   type="e-mail"
                   ref={emailRef}
                   required
+                  placeholder="E-mail"
                 />
               </Form.Group>
               <Form.Group id="Password">
                 <Form.Control
                   style={{
-                    width: "400px",
+                    width: "300px",
                     marginTop: "30px",
                     padding: "12px",
                     marginLeft: "0px",
@@ -73,13 +74,14 @@ function Signup() {
                   type="password"
                   ref={passwordRef}
                   required
+                  placeholder="password"
                 />
               </Form.Group>
 
               <Form.Group id="Password-confirmed">
                 <Form.Control
                   style={{
-                    width: "400px",
+                    width: "300px",
                     marginTop: "30px",
                     padding: "12px",
                     marginLeft: "0px",
@@ -87,6 +89,7 @@ function Signup() {
                   type="password"
                   ref={passwordConfirmationRef}
                   required
+                  placeholder="confirm password"
                 />
               </Form.Group>
 
