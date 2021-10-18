@@ -1,5 +1,6 @@
 import {
   Bookmark,
+  ChevronLeft,
   GitHub,
   Home,
   HomeOutlined,
@@ -23,13 +24,17 @@ import "../explore-css/exploredetail.css";
 import Exploregrid from "./Expploregrid";
 import Footer from "../component/Footer";
 import Exploresearch from "./Exploresearch";
+import { useHistory } from "react-router";
 
 const Exploredetail = ({ match }) => {
   const [detail, setDetail] = useState([]);
   const [display, setDisplay] = useState([]);
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
-
+  const history = useHistory();
+  const onClick = () => {
+    history.push("/explore");
+  };
   const fetchData = () => {
     fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${match.params.id}`
@@ -79,13 +84,15 @@ const Exploredetail = ({ match }) => {
           {" "}
           <div className="menu">
             {" "}
-            <Menu
+            <ChevronLeft
               style={{
                 color: "#32cd32",
                 cursor: "pointer",
-                marginLeft: "15px",
+                marginLeft: "0px",
+                fontSize: "2.3rem",
               }}
-            ></Menu>
+              onClick={onClick}
+            ></ChevronLeft>
           </div>
           <div>
             <h3>raenFoodexplore</h3>
