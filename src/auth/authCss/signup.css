@@ -33,12 +33,11 @@
     flex-direction: column;
     flex-direction: column-reverse;
     width: 90%;
-    /* background: #32cd32; */
+    background: white;
   }
   .main-sign {
-    background: #32cd32;
-    width: 460px;
-    height: 1100px;
+    background: white;
+
     /* margin-top: 100px; */
   }
 }
