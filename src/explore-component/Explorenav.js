@@ -78,7 +78,7 @@ const Explorenav = () => {
               style={{
                 color: "#32cd32",
                 cursor: "pointer",
-                marginLeft: "15px",
+                marginLeft: "0px",
               }}
               onClick={handleNav}
             ></Menu>

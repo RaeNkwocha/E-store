@@ -6,7 +6,7 @@
   /* padding: 50px; */
   place-items: center;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   gap: 1rem;
 }
@@ -18,8 +18,8 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   color: white;
-  margin-top: 30px;
-  font-size: 3rem;
+  margin-top: 10px;
+  font-size: 2rem;
   animation-iteration-count: infinite;
 }
 @-webkit-keyframes pulse {
@@ -28,8 +28,8 @@
     transform: scale3d(1, 1, 1);
   }
   50% {
-    -webkit-transform: scale3d(2.05, 2.05, 2.05);
-    transform: scale3d(2.05, 2.05, 2.05);
+    -webkit-transform: scale3d(1.55, 1.55, 1.55);
+    transform: scale3d(1.55, 1.55, 1.55);
   }
   100% {
     -webkit-transform: scale3d(1, 1, 1);
@@ -42,8 +42,8 @@
     transform: scale3d(1, 1, 1);
   }
   50% {
-    -webkit-transform: scale3d(2.05, 2.05, 2.05);
-    transform: scale3d(2.05, 2.05, 2.05);
+    -webkit-transform: scale3d(1.55, 1.55, 1.55);
+    transform: scale3d(1.55, 1.55, 1.55);
   }
   100% {
     -webkit-transform: scale3d(1, 1, 1);
