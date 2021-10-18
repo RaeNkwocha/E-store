@@ -26,7 +26,7 @@ const Explorenav = () => {
   const [string, setString] = useState("Seafood");
 
   const [display, setDisplay] = useState([]);
-
+  const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
 
   // const filter = (btn) => {
@@ -57,7 +57,10 @@ const Explorenav = () => {
     event.preventDefault();
     fetchSearch();
   };
-
+  const handleNav = () => {
+    setOpen(!open);
+  };
+  console.log(open, "open");
   useEffect(() => {
     fetchData();
     fetchCat();
@@ -70,12 +73,14 @@ const Explorenav = () => {
           {" "}
           <div className="menu">
             {" "}
+            <div className={open ? "explore-block" : null}></div>
             <Menu
               style={{
                 color: "#32cd32",
                 cursor: "pointer",
                 marginLeft: "15px",
               }}
+              onClick={handleNav}
             ></Menu>
           </div>
           <div>
@@ -148,28 +153,31 @@ const Explorenav = () => {
       </nav>
       <div className="border"></div>
       <section className="explore-nav-2">
-        <div className="explore-block">
-          <div style={{ cursor: "pointer" }}>
-            {" "}
-            <HomeOutlined></HomeOutlined>
-            <h3>Home</h3>
+        {open ? (
+          <div className="explore-block">
+            <div style={{ cursor: "pointer" }}>
+              {" "}
+              <HomeOutlined></HomeOutlined>
+              <h3>Home</h3>
+            </div>
+            <div style={{ cursor: "pointer" }}>
+              {" "}
+              <Work></Work>
+              <h3>About</h3>
+            </div>
+            <div style={{ cursor: "pointer" }}>
+              {" "}
+              <RoomServiceOutlined></RoomServiceOutlined>
+              <h3>Services</h3>
+            </div>
+            <div style={{ cursor: "pointer" }} style={{ cursor: "pointer" }}>
+              {" "}
+              <Web></Web>
+              <h3>Portfolio</h3>
+            </div>
           </div>
-          <div style={{ cursor: "pointer" }}>
-            {" "}
-            <Work></Work>
-            <h3>About</h3>
-          </div>
-          <div style={{ cursor: "pointer" }}>
-            {" "}
-            <RoomServiceOutlined></RoomServiceOutlined>
-            <h3>Services</h3>
-          </div>
-          <div style={{ cursor: "pointer" }} style={{ cursor: "pointer" }}>
-            {" "}
-            <Web></Web>
-            <h3>Portfolio</h3>
-          </div>
-        </div>
+        ) : null}
+
         <section>
           <div className="chip">
             {data.map((item) => {

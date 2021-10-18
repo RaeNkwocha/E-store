@@ -59,6 +59,9 @@ body {
     gap: 0.5rem;
     flex-wrap: wrap;
   }
+  .inner--grid h2 {
+    padding-left: 15px;
+  }
   .detailed-grid {
     display: flex;
     flex-direction: column;
@@ -72,6 +75,7 @@ body {
     padding-top: 20px;
     width: 100%;
     line-height: 1.5rem;
+    padding-left: 15px;
   }
   .grid-style h1 {
     padding-left: 10px;
