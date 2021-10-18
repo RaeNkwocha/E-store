@@ -182,9 +182,7 @@ const Exploredetail = ({ match }) => {
                         <h5>{item.strArea}</h5>
                       </div>
                       <div>
-                        <h5 style={{ marginRight: "50px" }}>
-                          {item.strCategory}
-                        </h5>
+                        <h5 style={{}}>{item.strCategory}</h5>
                       </div>
                       <div>
                         {/* <a

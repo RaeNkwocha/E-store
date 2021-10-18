@@ -66,13 +66,11 @@ body {
   }
   .grid-style-2 img {
     width: 100%;
-    padding: 10px;
+    height: 300px;
   }
   .inst h5 {
     padding-top: 20px;
-    width: 90%;
-    padding-left: 10px;
-    padding-right: 5px;
+    width: 100%;
     line-height: 1.5rem;
   }
   .grid-style h1 {

@@ -47,8 +47,11 @@ const Exploremain = ({ fetchSearch, search, display }) => {
             {display && display.length ? (
               display.map((item) => {
                 return (
-                  <Link to={`/explore/${item.idMeal}`}>
-                    <Card
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/explore/${item.idMeal}`}
+                  >
+                    <div
                       key={item.idMeal}
                       sx={{ maxWidth: 345 }}
                       style={{ height: "400px" }}
@@ -76,7 +79,7 @@ const Exploremain = ({ fetchSearch, search, display }) => {
                         <Button size="small">Share</Button>
                         <Button size="small">Learn More</Button>
                       </CardActions>
-                    </Card>
+                    </div>
                   </Link>
                 );
               })
@@ -119,8 +122,11 @@ const Exploremain = ({ fetchSearch, search, display }) => {
             {data &&
               data.map((item) => {
                 return (
-                  <Link to={`/explore/${item.idMeal}`}>
-                    <Card
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/explore/${item.idMeal}`}
+                  >
+                    <div
                       key={item.idMeal}
                       sx={{ maxWidth: 345 }}
                       style={{ height: "400px" }}
@@ -148,7 +154,7 @@ const Exploremain = ({ fetchSearch, search, display }) => {
                         <Button size="small">Share</Button>
                         <Button size="small">Learn More</Button>
                       </CardActions>
-                    </Card>
+                    </div>
                   </Link>
                 );
               })}

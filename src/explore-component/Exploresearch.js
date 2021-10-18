@@ -71,7 +71,10 @@ const Exploresearch = () => {
             {data &&
               data.map((item) => {
                 return (
-                  <Link to={`/explore/${item.idMeal}`}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/explore/${item.idMeal}`}
+                  >
                     <div
                       key={item.idMeal}
                       sx={{ maxWidth: 345 }}

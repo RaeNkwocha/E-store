@@ -26,7 +26,10 @@ const Exploregrid = ({ fetchSearch, search, display }) => {
           <section className="explore-flex-1">
             {display && display.length ? (
               display.map((item) => (
-                <Link to={`/explore/${item.idMeal}`}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/explore/${item.idMeal}`}
+                >
                   <div
                     key={item.idMeal}
                     sx={{ maxWidth: 345 }}

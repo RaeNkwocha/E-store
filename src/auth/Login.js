@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "./Authcontext";
 import signup from "./authimages/signup.jpg";
@@ -22,16 +22,25 @@ function Login() {
       await logIn(emailRef.current.value, passwordRef.current.value);
       history.push("/home");
     } catch {
-      setError("failed to sign in");
+      setError("incorrect password");
     }
     setLoading(false);
   }
   return (
     <main className="main-sign">
+      <h1 className="pulse">raenFoodsTore</h1>
+
       <section className="signup-grid">
         <main>
           <h3 style={{ marginLeft: "30px" }}> Login in</h3>
-          {/* {error && <Alert severity="error"> {error} </Alert>} */}
+          {error && (
+            <Alert severity="error">
+              <Alert.Heading style={{ color: "red", marginLeft: "30px" }}>
+                {" "}
+                {error}
+              </Alert.Heading>
+            </Alert>
+          )}
           <h6
             style={{
               fontSize: "10px",

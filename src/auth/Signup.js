@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "./Authcontext";
 import signup from "./authimages/signup.jpg";
@@ -30,10 +30,18 @@ function Signup() {
   }
   return (
     <main className="main-sign">
+      <h1 className="pulse">raenFoodsTore</h1>
       <section className="signup-grid">
         <main>
           <h3 style={{ marginLeft: "30px" }}> Sign up</h3>
-          {/* {error && <Alert severity="error"> {error} </Alert>} */}
+          {error && (
+            <Alert variant="danger" severity="error">
+              <Alert.Heading style={{ color: "red", marginLeft: "30px" }}>
+                {" "}
+                {error}
+              </Alert.Heading>
+            </Alert>
+          )}
           <h5
             style={{
               fontSize: "10px",
