@@ -22,6 +22,9 @@ import SimpleBottomNavigation from "../component/Bottomnav";
 
 const Explorenav = () => {
   const [data, setData] = useState([]);
+  const [cat, setCat] = useState([]);
+  const [string, setString] = useState("Seafood");
+
   const [display, setDisplay] = useState([]);
 
   const [search, setSearch] = useState("");
@@ -34,6 +37,12 @@ const Explorenav = () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
       .then((res) => res.json())
       .then((result) => setData(result.categories))
+      .catch((error) => console.log("error"));
+  };
+  const fetchCat = () => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`)
+      .then((res) => res.json())
+      .then((result) => setCat(result.meeals))
       .catch((error) => console.log("error"));
   };
 
@@ -51,8 +60,9 @@ const Explorenav = () => {
 
   useEffect(() => {
     fetchData();
+    fetchCat();
   }, []);
-
+  console.log(cat, "hello");
   return (
     <>
       <nav className="explore-nav">
