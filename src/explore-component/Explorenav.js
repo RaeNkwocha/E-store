@@ -28,7 +28,7 @@ const Explorenav = () => {
   const [stringName, setStringName] = useState("");
   const history = useHistory();
   const [display, setDisplay] = useState([]);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
 
   // const filter = (btn) => {

@@ -65,9 +65,9 @@ const Exploremain = ({
           <Categories categories={categories}></Categories>
           <h4
             style={{
-              marginBottom: "50px",
+              // marginBottom: "50px",
               marginLeft: "15px",
-              marginTop: "20px",
+              // marginTop: "20px",
             }}
           >
             Top searches{" "}
