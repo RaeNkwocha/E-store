@@ -9,7 +9,13 @@ import {
 import { Link } from "react-router-dom";
 import "../explore-css/exploredetail.css";
 
-const Exploregrid = ({ fetchSearch, search, display }) => {
+const Exploregrid = ({
+  fetchSearch,
+  search,
+  display,
+  categories,
+  stringName,
+}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -21,9 +27,39 @@ const Exploregrid = ({ fetchSearch, search, display }) => {
     <>
       <main className="explore-main-1">
         <main>
-          <h5 className="top">Top searches</h5>
+          <h4 className="top">{stringName}</h4>
 
           <section className="explore-flex-1">
+            {categories &&
+              categories.map((item) => {
+                return (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/explore/${item.idMeal}`}
+                  >
+                    <div key={item.idMeal} sx={{ maxWidth: 345 }}>
+                      <CardMedia
+                        component="img"
+                        alt="green iguana"
+                        height="200"
+                        image={item.strMealThumb}
+                      />
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          style={{ fontSize: "1.2rem" }}
+                          component="div"
+                        >
+                          {item.strMeal}
+                        </Typography>
+                      </CardContent>
+                    </div>
+                  </Link>
+                );
+              })}
+            <h5 className="top">Top searches</h5>
+
             {display && display.length ? (
               display.map((item) => (
                 <Link

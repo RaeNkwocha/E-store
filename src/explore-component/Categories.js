@@ -1,80 +1,21 @@
 import {
-  Bookmark,
-  GitHub,
-  Home,
-  HomeOutlined,
-  Instagram,
-  Menu,
-  Person,
-  RoomServiceOutlined,
-  Web,
-  Work,
-} from "@material-ui/icons";
-import React, { useEffect, useState } from "react";
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
+
 import "../explore-css/explore.css";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
-import TextField from "@mui/material/TextField";
-import { Chip } from "@material-ui/core";
-import Exploremain from "./Exploremain";
 import SimpleBottomNavigation from "../component/Bottomnav";
-import Categories from "./Categories";
-import { useHistory } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const Explorenav = () => {
-  const [data, setData] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [stringName, setStringName] = useState("");
-  const history = useHistory();
-  const [display, setDisplay] = useState([]);
-  const [open, setOpen] = useState(true);
-  const [search, setSearch] = useState("");
-
-  // const filter = (btn) => {
-  //   const filterData = cat.filter((item) => item.strCategory === btn);
-  //   setChip(filterData);
-  // };
-  const fetchData = () => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-      .then((res) => res.json())
-      .then((result) => setData(result.categories))
-      .catch((error) => console.log("error"));
-  };
-  const fetchCategories = () => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${stringName}`)
-      .then((res) => res.json())
-      .then((result) => setCategories(result.meals))
-      .catch((error) => console.log("error"));
-  };
-  console.log(categories, "hello");
-
-  const fetchSearch = () => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-      .then((res) => res.json())
-      .then((result) => setDisplay(result.meals))
-      .catch((error) => console.log("error"));
-  };
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    fetchSearch();
-  };
-  const handleNav = () => {
-    setOpen(!open);
-  };
-  const handleChip = (item) => {
-    setStringName(item.strCategory);
-  };
-
-  console.log(open, "open");
-  useEffect(() => {
-    fetchData();
-    fetchCategories();
-  }, [stringName]);
+const Categories = ({ categories }) => {
   return (
     <>
-      <nav className="explore-nav">
+      {/* <nav className="explore-nav">
         <div className="explore-flex">
           {" "}
           <div className="menu">
@@ -194,7 +135,7 @@ const Explorenav = () => {
                       style={{ cursor: "pointer" }}
                       label={item.strCategory}
                       clickable
-                      onClick={() => handleChip(item)}
+                      onClick={() => setStringName(item.strCategory)}
                     >
                       {item.strCategory}
                     </Chip>
@@ -203,17 +144,48 @@ const Explorenav = () => {
               );
             })}
           </div>
-          <div className="border-2"></div>
-          <Exploremain
-            categories={categories}
-            stringName={stringName}
-            search={search}
-            display={display}
-            handleSearch={handleSearch}
-            fetchSearch={fetchSearch}
-          ></Exploremain>{" "}
-        </section>
+          <div className="border-2"></div> */}
+      <section className="explore-flex">
+        {categories &&
+          categories.map((item) => {
+            return (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/explore/${item.idMeal}`}
+              >
+                <div
+                  key={item.idMeal}
+                  sx={{ maxWidth: 345 }}
+                  style={{ height: "400px", marginTop: "-50px" }}
+                >
+                  <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    height="200"
+                    image={item.strMealThumb}
+                    style={{ width: "350px" }}
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      style={{ fontSize: "1.2rem" }}
+                      component="div"
+                    >
+                      {item.strMeal}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">Share</Button>
+                    <Button size="small">Learn More</Button>
+                  </CardActions>
+                </div>
+              </Link>
+            );
+          })}
       </section>
+      {/* </section>
+      </section> */}
 
       <div className="bottom-nav">
         <SimpleBottomNavigation></SimpleBottomNavigation>
@@ -222,4 +194,4 @@ const Explorenav = () => {
   );
 };
 
-export default Explorenav;
+export default Categories;

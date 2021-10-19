@@ -4,7 +4,7 @@
   /* margin: 10px; */
 }
 .explore-flex {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
   padding: 10px;
@@ -52,7 +52,7 @@
   }
   .explore-flex {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, 1fr);
     padding: 10px;
   }
   .search input {

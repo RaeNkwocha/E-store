@@ -25,9 +25,12 @@ import Exploregrid from "./Expploregrid";
 import Footer from "../component/Footer";
 import Exploresearch from "./Exploresearch";
 import { useHistory } from "react-router";
+import Categories from "./Categories";
 
 const Exploredetail = ({ match }) => {
   const [detail, setDetail] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [stringName, setStringName] = useState("");
   const [display, setDisplay] = useState([]);
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
@@ -49,6 +52,12 @@ const Exploredetail = ({ match }) => {
       .then((result) => setDisplay(result.meals))
       .catch((error) => console.log("error"));
   };
+  const fetchCategories = () => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${stringName}`)
+      .then((res) => res.json())
+      .then((result) => setCategories(result.meals))
+      .catch((error) => console.log("error"));
+  };
   const fetchCat = () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
       .then((res) => res.json())
@@ -65,7 +74,10 @@ const Exploredetail = ({ match }) => {
       behavior: "smooth",
     });
   };
-
+  const handleChip = (item) => {
+    setStringName(item.strCategory);
+    fetchCategories();
+  };
   useEffect(() => {
     fetchData();
     fetchCat();
@@ -228,6 +240,8 @@ const Exploredetail = ({ match }) => {
                         style={{ cursor: "pointer" }}
                         label={item.strCategory}
                         clickable
+                        onClick={(e) => handleChip(item)}
+                        type="button"
                       />
                     </Stack>
                   </div>
@@ -237,6 +251,8 @@ const Exploredetail = ({ match }) => {
             <div className="border-2"></div>
             <Exploregrid
               search={search}
+              categories={categories}
+              stringName={stringName}
               display={display}
               handleSearch={handleSearch}
               fetchSearch={fetchSearch}

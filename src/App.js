@@ -7,6 +7,7 @@ import Exploredetail from "./explore-component/Exploredetail";
 import { AuthProvider } from "./auth/Authcontext";
 import Signup from "./auth/Signup";
 import Login from "./auth/Login";
+import Categories from "./explore-component/Categories";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

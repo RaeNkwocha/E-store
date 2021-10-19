@@ -11,8 +11,15 @@ import Button from "@mui/material/Button";
 import { CardActions } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Footer from "../component/Footer";
+import Categories from "./Categories";
 
-const Exploremain = ({ fetchSearch, search, display }) => {
+const Exploremain = ({
+  fetchSearch,
+  search,
+  display,
+  categories,
+  stringName,
+}) => {
   const [data, setData] = useState([]);
   const [input, setInput] = useState("a");
 
@@ -46,8 +53,25 @@ const Exploremain = ({ fetchSearch, search, display }) => {
     <>
       <main className="explore-main">
         <main>
-          <h5 className="top">Top searches</h5>
-
+          <h4
+            style={{
+              marginBottom: "50px",
+              marginLeft: "15px",
+              marginTop: "20px",
+            }}
+          >
+            {stringName}
+          </h4>
+          <Categories categories={categories}></Categories>
+          <h4
+            style={{
+              marginBottom: "50px",
+              marginLeft: "15px",
+              marginTop: "20px",
+            }}
+          >
+            Top searches{" "}
+          </h4>
           <section className="explore-flex">
             {display && display.length ? (
               display.map((item) => {
