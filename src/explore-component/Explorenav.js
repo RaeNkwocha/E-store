@@ -186,6 +186,7 @@ const Explorenav = () => {
 
         <section>
           <div className="chip">
+            <Chip label="all" onClick={() => setStringName("")} clickable />
             {data.map((item) => {
               return (
                 <div key={item.strCategory}>
