@@ -145,7 +145,7 @@ const Categories = ({ categories }) => {
             })}
           </div>
           <div className="border-2"></div> */}
-      <section className="explore-flex">
+      <section className="explore-flex-3">
         {categories &&
           categories.map((item) => {
             return (
@@ -163,7 +163,7 @@ const Categories = ({ categories }) => {
                     alt="green iguana"
                     height="200"
                     image={item.strMealThumb}
-                    style={{ width: "350px" }}
+                    // style={{ width: "350px" }}
                   />
                   <CardContent>
                     <Typography

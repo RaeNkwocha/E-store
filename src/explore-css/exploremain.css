@@ -1,9 +1,6 @@
 .explore-main {
   height: auto;
   width: 100%;
-  /* margin-top: -30px; */
-
-  /* margin: 10px; */
 }
 .explore-flex {
   display: flex;
@@ -20,9 +17,6 @@
   margin: 8px;
 }
 @media screen and (max-width: 400px) {
-  .detailed-grid-1 {
-    /* padding-right: 50px; */
-  }
 }
 @media screen and (max-width: 600px) {
   .explore-flex {
@@ -50,7 +44,6 @@
     background: whitesmoke;
     height: auto;
     width: 100%;
-    /* margin-top: -30px; */
   }
   .explore-flex {
     display: grid;
