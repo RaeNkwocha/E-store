@@ -20,14 +20,15 @@ import { Chip } from "@material-ui/core";
 import Exploremain from "./Exploremain";
 import SimpleBottomNavigation from "../component/Bottomnav";
 import Categories from "./Categories";
-import { useHistory } from "react-router";
+import { Redirect, useHistory } from "react-router";
 
-const Explorenav = () => {
+const Explorenav = ({ display, setDisplay }) => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [stringName, setStringName] = useState("");
   const history = useHistory();
-  const [display, setDisplay] = useState([]);
+  const [redirect, setRedirect] = useState(false);
+  // const [display, setDisplay] = useState([]);
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -59,7 +60,10 @@ const Explorenav = () => {
   const handleSearch = (event) => {
     event.preventDefault();
     fetchSearch();
+    setRedirect(true);
+    setDisplay(event);
   };
+
   const handleNav = () => {
     setOpen(!open);
   };
@@ -71,7 +75,11 @@ const Explorenav = () => {
   useEffect(() => {
     fetchData();
     fetchCategories();
-  }, [stringName]);
+  }, [stringName, search]);
+  if (redirect)
+    return (
+      <Redirect to={{ pathname: "/search", display: { display } }}></Redirect>
+    );
   return (
     <>
       <nav className="explore-nav">

@@ -1,4 +1,10 @@
 import {
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
+import {
   Bookmark,
   ChevronLeft,
   GitHub,
@@ -11,47 +17,43 @@ import {
   Web,
   Work,
 } from "@material-ui/icons";
-import React, { useEffect, useState } from "react";
-import "../explore-css/explore.css";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
 import TextField from "@mui/material/TextField";
 import { Chip } from "@material-ui/core";
-import Exploremain from "./Exploremain";
-import SimpleBottomNavigation from "../component/Bottomnav";
-import "../explore-css/exploredetail.css";
-import Exploregrid from "./Expploregrid";
-import Footer from "../component/Footer";
-import Exploresearch from "./Exploresearch";
+import React, { useEffect, useState } from "react";
 import { Redirect, useHistory } from "react-router";
-import Categories from "./Categories";
+import { Link } from "react-router-dom";
+import Exploresearch from "./Exploresearch";
+import Footer from "../component/Footer";
+import Exploregrid from "./Expploregrid";
 
-const Exploredetail = ({ match }) => {
-  const [detail, setDetail] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [stringName, setStringName] = useState("");
-  const [display, setDisplay] = useState([]);
+const Search = ({ display, setDisplay }) => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
+  const [stringName, setStringName] = useState("");
+  const [categories, setCategories] = useState([]);
   const [redirect, setRedirect] = useState(false);
+
+  const [detail, setDetail] = useState([]);
 
   const history = useHistory();
   const onClick = () => {
     history.push("/explore");
   };
-  const fetchData = () => {
-    fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${match.params.id}`
-    )
-      .then((res) => res.json())
-      .then((result) => setDetail(result.meals))
-      .catch((error) => console.log("error"));
+  const handleChip = (item) => {
+    setStringName(item.strCategory);
+    fetchCategories();
   };
-  const fetchSearch = () => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+  const handleSearch = (event) => {
+    event.preventDefault();
+    fetchSearch();
+  };
+  const fetchCat = () => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
       .then((res) => res.json())
-      .then((result) => setDisplay(result.meals))
+      .then((result) => setData(result.meals))
       .catch((error) => console.log("error"));
   };
   const fetchCategories = () => {
@@ -60,40 +62,24 @@ const Exploredetail = ({ match }) => {
       .then((result) => setCategories(result.meals))
       .catch((error) => console.log("error"));
   };
-  const fetchCat = () => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
+  const fetchSearch = () => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
       .then((res) => res.json())
-      .then((result) => setData(result.meals))
+      .then((result) => setDisplay(result.meals))
       .catch((error) => console.log("error"));
   };
-  const handleSearch = (event) => {
-    event.preventDefault();
-
-    fetchSearch();
-    setRedirect(true);
-    setDisplay(event);
-  };
-  const handleChip = (item) => {
-    setStringName(item.strCategory);
-    fetchCategories();
-  };
   useEffect(() => {
-    fetchData();
+    fetchCategories();
     fetchCat();
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-    console.log(match, "heyy");
-  }, [match.params.id]);
-  console.log(data);
-  if (redirect)
-    return (
-      <Redirect to={{ pathname: "/search", display: { display } }}></Redirect>
-    );
+  }, [stringName]);
+
   return (
-    <>
+    <div>
       <nav className="explore-nav">
         <div className="explore-flex">
           {" "}
@@ -230,8 +216,48 @@ const Exploredetail = ({ match }) => {
                 </div>
               );
             })}
-
-            <Exploresearch></Exploresearch>
+            {display && display.length ? (
+              display.map((item) => {
+                return (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/explore/${item.idMeal}`}
+                  >
+                    <div
+                      key={item.idMeal}
+                      sx={{ maxWidth: 345 }}
+                      style={{ height: "400px" }}
+                    >
+                      <CardMedia
+                        component="img"
+                        alt="green iguana"
+                        height="200"
+                        image={item.strMealThumb}
+                      />
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          style={{ fontSize: "1.2rem" }}
+                          component="div"
+                        >
+                          {item.strMeal}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {item.strInstructions.substring(0, 120)}
+                        </Typography>
+                      </CardContent>
+                      <CardActions>
+                        {/* <Button size="small">Share</Button>
+                    <Button size="small">Learn More</Button> */}
+                      </CardActions>
+                    </div>
+                  </Link>
+                );
+              })
+            ) : (
+              <h5>result not found</h5>
+            )}{" "}
           </div>
           <div>
             <div className="chip-1">
@@ -252,14 +278,36 @@ const Exploredetail = ({ match }) => {
               })}
             </div>
             <div className="border-2"></div>
-            <Exploregrid
-              search={search}
-              categories={categories}
-              stringName={stringName}
-              display={display}
-              handleSearch={handleSearch}
-              fetchSearch={fetchSearch}
-            ></Exploregrid>{" "}
+            <section className="explore-flex-1">
+              {categories &&
+                categories.map((item) => {
+                  return (
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to={`/explore/${item.idMeal}`}
+                    >
+                      <div key={item.idMeal} sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                          component="img"
+                          alt="green iguana"
+                          height="200"
+                          image={item.strMealThumb}
+                        />
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            style={{ fontSize: "1.2rem" }}
+                            component="div"
+                          >
+                            {item.strMeal}
+                          </Typography>
+                        </CardContent>
+                      </div>
+                    </Link>
+                  );
+                })}
+            </section>
           </div>
         </section>
       </section>
@@ -267,8 +315,8 @@ const Exploredetail = ({ match }) => {
         <SimpleBottomNavigation></SimpleBottomNavigation>
       </div> */}
       <Footer></Footer>
-    </>
+    </div>
   );
 };
 
-export default Exploredetail;
+export default Search;

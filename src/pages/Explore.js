@@ -1,11 +1,11 @@
 import React from "react";
 import Explorenav from "../explore-component/Explorenav";
 
-const Explore = () => {
+const Explore = ({ display, setDisplay }) => {
   return (
     <>
       <nav>
-        <Explorenav></Explorenav>
+        <Explorenav display={display} setDisplay={setDisplay}></Explorenav>
       </nav>
     </>
   );
