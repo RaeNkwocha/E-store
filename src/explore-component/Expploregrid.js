@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../explore-css/exploremain.css";
-import {
-  CardContent,
-  CardMedia,
-  CircularProgress,
-  Typography,
-} from "@mui/material";
+import { CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "../explore-css/exploredetail.css";
 
@@ -16,7 +11,7 @@ const Exploregrid = ({
   categories,
   stringName,
 }) => {
-  const [data, setData] = useState([]);
+  const [data] = useState([]);
 
   useEffect(() => {
     fetchSearch();
@@ -35,6 +30,7 @@ const Exploregrid = ({
                 return (
                   <Link
                     style={{ textDecoration: "none" }}
+                    key={item.idMeal}
                     to={`/explore/${item.idMeal}`}
                   >
                     <div key={item.idMeal} sx={{ maxWidth: 345 }}>
@@ -65,6 +61,7 @@ const Exploregrid = ({
                 <Link
                   style={{ textDecoration: "none" }}
                   to={`/explore/${item.idMeal}`}
+                  key={item.idMeal}
                 >
                   <div
                     key={item.idMeal}

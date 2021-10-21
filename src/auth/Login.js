@@ -126,7 +126,7 @@ function Login() {
           </div>
         </main>
         <div className="signup-img">
-          <img width="100%" src={signup}></img>
+          <img width="100%" src={signup} alt=""></img>
         </div>
       </section>
     </main>

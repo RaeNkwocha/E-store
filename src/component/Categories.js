@@ -1,6 +1,5 @@
 import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { NavItem } from "react-bootstrap";
 import "../css/categories.css";
 
 const Categories = () => {

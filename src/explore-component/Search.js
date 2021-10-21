@@ -8,35 +8,28 @@ import {
   Bookmark,
   ChevronLeft,
   GitHub,
-  Home,
-  HomeOutlined,
   Instagram,
-  Menu,
   Person,
-  RoomServiceOutlined,
-  Web,
-  Work,
 } from "@material-ui/icons";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
 import TextField from "@mui/material/TextField";
 import { Chip } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
-import { Redirect, useHistory } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import Exploresearch from "./Exploresearch";
 import Footer from "../component/Footer";
-import Exploregrid from "./Expploregrid";
+import { ExploreContext } from "./ExploreContext";
 
-const Search = ({ display, setDisplay }) => {
+const Search = () => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const [stringName, setStringName] = useState("");
   const [categories, setCategories] = useState([]);
-  const [redirect, setRedirect] = useState(false);
+  const [display, setDisplay] = useContext(ExploreContext);
 
-  const [detail, setDetail] = useState([]);
+  const [detail] = useState([]);
 
   const history = useHistory();
   const onClick = () => {
@@ -76,7 +69,7 @@ const Search = ({ display, setDisplay }) => {
       left: 0,
       behavior: "smooth",
     });
-  }, [stringName]);
+  }, []);
 
   return (
     <div>
@@ -169,11 +162,12 @@ const Search = ({ display, setDisplay }) => {
           <div className="grid-style">
             {detail.map((item) => {
               return (
-                <div className="grid-style-2">
+                <div className="grid-style-2" key={item.idMeal}>
                   <img
                     src={item.strMealThumb}
                     height="400px"
                     width="100%"
+                    alt=""
                   ></img>
                   <div className="inner--grid">
                     <h2>{item.strMeal}</h2>
@@ -207,7 +201,11 @@ const Search = ({ display, setDisplay }) => {
                     <h5>
                       {item.strInstructions}
                       <span style={{ float: "right" }}>
-                        <a href={item.strSource} target="_blank">
+                        <a
+                          href={item.strSource}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           {item.strSource}
                         </a>
                       </span>

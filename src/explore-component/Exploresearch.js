@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../explore-css/exploremain.css";
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  CircularProgress,
-  Typography,
-} from "@mui/material";
+import { CardContent, CardMedia, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { CardActions } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -74,6 +68,7 @@ const Exploresearch = () => {
                   <Link
                     style={{ textDecoration: "none" }}
                     to={`/explore/${item.idMeal}`}
+                    key={item.idMeal}
                   >
                     <div
                       key={item.idMeal}

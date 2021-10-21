@@ -3,7 +3,6 @@ import Categories from "../component/Categories";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
 import HeaderTwo from "../component/HeaderTwo";
-import Main from "../component/Main";
 import Nav from "../component/Nav";
 import Newsection from "../component/Newsection";
 import Section from "../component/Section";

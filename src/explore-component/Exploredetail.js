@@ -2,40 +2,32 @@ import {
   Bookmark,
   ChevronLeft,
   GitHub,
-  Home,
-  HomeOutlined,
   Instagram,
-  Menu,
   Person,
-  RoomServiceOutlined,
-  Web,
-  Work,
 } from "@material-ui/icons";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../explore-css/explore.css";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
 import TextField from "@mui/material/TextField";
 import { Chip } from "@material-ui/core";
-import Exploremain from "./Exploremain";
-import SimpleBottomNavigation from "../component/Bottomnav";
+
 import "../explore-css/exploredetail.css";
 import Exploregrid from "./Expploregrid";
 import Footer from "../component/Footer";
 import Exploresearch from "./Exploresearch";
 import { Redirect, useHistory } from "react-router";
-import Categories from "./Categories";
+import { ExploreContext } from "./ExploreContext";
 
 const Exploredetail = ({ match }) => {
   const [detail, setDetail] = useState([]);
   const [categories, setCategories] = useState([]);
   const [stringName, setStringName] = useState("");
-  const [display, setDisplay] = useState([]);
+  const [display, setDisplay] = useContext(ExploreContext);
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const [redirect, setRedirect] = useState(false);
-
   const history = useHistory();
   const onClick = () => {
     history.push("/explore");
@@ -68,7 +60,6 @@ const Exploredetail = ({ match }) => {
   };
   const handleSearch = (event) => {
     event.preventDefault();
-
     fetchSearch();
     setRedirect(true);
     setDisplay(event);
@@ -85,8 +76,9 @@ const Exploredetail = ({ match }) => {
       left: 0,
       behavior: "smooth",
     });
-    console.log(match, "heyy");
   }, [match.params.id]);
+  console.log(match, "heyy");
+
   console.log(data);
   if (redirect)
     return (
@@ -150,7 +142,7 @@ const Exploredetail = ({ match }) => {
               height: "33px",
               border: "none",
             }}
-            onClick={handleSearch}
+            onClick={() => handleSearch()}
           />
         </div>
         <div className="explore-flex-2">
@@ -183,11 +175,12 @@ const Exploredetail = ({ match }) => {
           <div className="grid-style">
             {detail.map((item) => {
               return (
-                <div className="grid-style-2">
+                <div key={item.idMeal} className="grid-style-2">
                   <img
                     src={item.strMealThumb}
                     height="400px"
                     width="100%"
+                    alt=""
                   ></img>
                   <div className="inner--grid">
                     <h2>{item.strMeal}</h2>
@@ -221,7 +214,11 @@ const Exploredetail = ({ match }) => {
                     <h5>
                       {item.strInstructions}
                       <span style={{ float: "right" }}>
-                        <a href={item.strSource} target="_blank">
+                        <a
+                          href={item.strSource}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           {item.strSource}
                         </a>
                       </span>

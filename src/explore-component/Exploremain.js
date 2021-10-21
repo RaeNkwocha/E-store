@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../explore-css/exploremain.css";
 import {
-  Card,
   CardContent,
   CardMedia,
   CircularProgress,
@@ -21,6 +20,7 @@ const Exploremain = ({
   stringName,
 }) => {
   const [data, setData] = useState([]);
+
   const [input, setInput] = useState("a");
 
   const fetchData = () => {
@@ -49,6 +49,7 @@ const Exploremain = ({
   //     return product.strMeal.match(search);
   //   });
   // }
+
   return (
     <>
       <main className="explore-main">
@@ -79,6 +80,7 @@ const Exploremain = ({
                   <Link
                     style={{ textDecoration: "none" }}
                     to={`/explore/${item.idMeal}`}
+                    key={item.idMeal}
                   >
                     <div
                       key={item.idMeal}
@@ -154,6 +156,7 @@ const Exploremain = ({
                   <Link
                     style={{ textDecoration: "none" }}
                     to={`/explore/${item.idMeal}`}
+                    key={item.idMeal}
                   >
                     <div
                       key={item.idMeal}

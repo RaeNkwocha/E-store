@@ -27,6 +27,7 @@ const Newsection = () => {
             <img
               style={{ marginTop: "30px" }}
               width="100%"
+              alt=""
               src={gridthree}
             ></img>
           </div>

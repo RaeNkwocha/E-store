@@ -17,20 +17,32 @@ const Footer = () => {
           <h5> &copy;{date} copyright</h5>
           <h5>Rae Nkwocha</h5>
           <h5>
-            <a href="https://www.themealdb.com/api.php" target="_blank">
+            <a
+              href="https://www.themealdb.com/api.php"
+              rel="noreferrer"
+              target="_blank"
+            >
               Api
             </a>
           </h5>
         </div>
         <div className="footer-flex">
           <h5>
-            <a href="https://github.com/RaeNkwocha/Food-app" target="_blank">
+            <a
+              href="https://github.com/RaeNkwocha/Food-app"
+              rel="noreferrer"
+              target="_blank"
+            >
               Github
             </a>
           </h5>
           <h5>
             {" "}
-            <a href="https://raenewsblog.netlify.app" target="_blank">
+            <a
+              href="https://raenewsblog.netlify.app"
+              rel="noreferrer"
+              target="_blank"
+            >
               Portfolio
             </a>
           </h5>

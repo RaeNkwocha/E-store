@@ -1,7 +1,6 @@
 import {
   Bookmark,
   GitHub,
-  Home,
   HomeOutlined,
   Instagram,
   Menu,
@@ -10,7 +9,7 @@ import {
   Web,
   Work,
 } from "@material-ui/icons";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../explore-css/explore.css";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -19,18 +18,16 @@ import TextField from "@mui/material/TextField";
 import { Chip } from "@material-ui/core";
 import Exploremain from "./Exploremain";
 import SimpleBottomNavigation from "../component/Bottomnav";
-import Categories from "./Categories";
-import { Redirect, useHistory } from "react-router";
-
-const Explorenav = ({ display, setDisplay }) => {
+import { Redirect } from "react-router";
+import { ExploreContext } from "./ExploreContext";
+const Explorenav = () => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [stringName, setStringName] = useState("");
-  const history = useHistory();
   const [redirect, setRedirect] = useState(false);
-  // const [display, setDisplay] = useState([]);
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [display, setDisplay] = useContext(ExploreContext);
 
   // const filter = (btn) => {
   //   const filterData = cat.filter((item) => item.strCategory === btn);
@@ -218,6 +215,7 @@ const Explorenav = ({ display, setDisplay }) => {
             stringName={stringName}
             search={search}
             display={display}
+            setDisplay={setDisplay}
             handleSearch={handleSearch}
             fetchSearch={fetchSearch}
           ></Exploremain>{" "}
