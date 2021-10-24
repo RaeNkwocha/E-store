@@ -71,6 +71,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  width: 100%;
   margin-left: 10px;
 }
 
@@ -146,76 +147,13 @@
   }
   .chip {
     overflow-x: scroll;
-    width: 30%;
-    padding-right: 30px;
-    flex-wrap: wrap;
+    width: 80%;
+    /* padding-right: 30px; */
+    flex-wrap: nowrap;
   }
 }
-@media screen and (max-width: 700px) {
-  .explore-nav {
-    display: grid;
-    grid-template-columns: 10% 80%;
-    width: 100%;
-    gap: 5px;
-    /* margin: 20px; */
-  }
-  .menu {
-    margin-top: 20px;
-  }
-  .explore-flex-3 {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .explore-block {
-    margin: 0px;
-    gap: 0.5rem;
-    z-index: 100;
-    -webkit-animation-name: slideInLeft;
-    animation-name: slideInLeft;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-
-  @-webkit-keyframes slideInLeft {
-    0% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideInLeft {
-    0% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-  }
-  /* .explore-block {
-    padding-left: 25px;
-    display: none;
-  } */
-  .explore-flex h3 {
-    display: none;
-  }
-  .chip {
-    width: 100%;
-  }
-  .explore-flex-2 {
-    display: none;
-  }
-}
-@media screen and (min-width: 700) {
+/*  */
+@media screen and (min-width: 700px) {
   .bottom-nav {
     display: none;
   }
