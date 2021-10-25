@@ -25,7 +25,7 @@ const Categories = ({ categories }) => {
                 <div
                   key={item.idMeal}
                   sx={{ maxWidth: 345 }}
-                  style={{ height: "400px", marginTop: "-50px" }}
+                  style={{ height: "400px" }}
                 >
                   <CardMedia
                     component="img"

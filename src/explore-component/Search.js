@@ -2,6 +2,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  CircularProgress,
   Typography,
 } from "@material-ui/core";
 import {
@@ -254,7 +255,7 @@ const Search = () => {
                 );
               })
             ) : (
-              <h5>result not found</h5>
+              <CircularProgress />
             )}{" "}
           </div>
           <div>

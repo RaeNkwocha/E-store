@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../explore-css/exploremain.css";
 import { CardContent, CardMedia, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
-import { CardActions } from "@material-ui/core";
+import { CardActions, CircularProgress } from "@material-ui/core";
 import { Link } from "react-router-dom";
 const Exploresearch = () => {
   const [data, setData] = useState([]);
@@ -58,7 +58,7 @@ const Exploresearch = () => {
         </h3>
         {data && data.length === 0 ? (
           <div>
-            <h5>no result</h5>
+            <CircularProgress></CircularProgress>{" "}
           </div>
         ) : (
           <section className="explore-flex-3">

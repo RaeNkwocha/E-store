@@ -30,7 +30,6 @@ function Signup() {
   }
   return (
     <main className="main-sign">
-      <h1 className="pulse">raenFoodsTore</h1>
       <section className="signup-grid">
         <main>
           <h3 style={{ marginLeft: "30px" }}> Sign up</h3>

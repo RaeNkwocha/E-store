@@ -3,6 +3,7 @@ import "../explore-css/exploremain.css";
 import { CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "../explore-css/exploredetail.css";
+import { CircularProgress } from "@material-ui/core";
 
 const Exploregrid = ({
   fetchSearch,
@@ -92,7 +93,7 @@ const Exploregrid = ({
               ))
             ) : (
               <h5 style={{ textAlign: "center", fontSize: "2rem" }}>
-                ...search not found
+                <CircularProgress></CircularProgress>{" "}
               </h5>
             )}
           </section>

@@ -115,7 +115,7 @@ const Exploremain = ({
                 );
               })
             ) : (
-              <h5>result not found</h5>
+              <CircularProgress></CircularProgress>
             )}
           </section>
         </main>

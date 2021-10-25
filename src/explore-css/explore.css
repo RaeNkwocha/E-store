@@ -28,7 +28,7 @@
   gap: 1rem;
 }
 .explore-block {
-  padding-left: 25px;
+  padding-left: 15px;
   -webkit-animation-name: slideInLeft;
   animation-name: slideInLeft;
   -webkit-animation-duration: 1s;
@@ -166,6 +166,7 @@
   .explore-flex-3 {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    margin: 20px;
   }
 
   .explore-block {
@@ -255,7 +256,7 @@
     gap: 1rem;
   }
   .explore-block {
-    padding-left: 25px;
+    padding-left: 10px;
     -webkit-animation-name: slideInLeft;
     animation-name: slideInLeft;
     -webkit-animation-duration: 1s;

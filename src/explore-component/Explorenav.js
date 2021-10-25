@@ -20,6 +20,7 @@ import Exploremain from "./Exploremain";
 import SimpleBottomNavigation from "../component/Bottomnav";
 import { Redirect } from "react-router";
 import { ExploreContext } from "./ExploreContext";
+import { Link } from "react-router-dom";
 const Explorenav = () => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -166,26 +167,58 @@ const Explorenav = () => {
       <section className="explore-nav-2">
         {open ? (
           <div className="explore-block">
-            <div style={{ cursor: "pointer" }}>
-              {" "}
-              <HomeOutlined></HomeOutlined>
-              <h3>Home</h3>
-            </div>
-            <div style={{ cursor: "pointer" }}>
+            <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
+              <div
+                style={{
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                {" "}
+                <HomeOutlined></HomeOutlined>
+                <h3>Home</h3>
+              </div>
+            </Link>
+            <div
+              style={{
+                cursor: "pointer",
+                display: "grid",
+                placeItems: "center",
+              }}
+            >
               {" "}
               <Work></Work>
               <h3>About</h3>
             </div>
-            <div style={{ cursor: "pointer" }}>
+            <div
+              style={{
+                cursor: "pointer",
+                display: "grid",
+                placeItems: "center",
+              }}
+            >
               {" "}
               <RoomServiceOutlined></RoomServiceOutlined>
               <h3>Services</h3>
             </div>
-            <div style={{ cursor: "pointer" }} style={{ cursor: "pointer" }}>
-              {" "}
-              <Web></Web>
-              <h3>Portfolio</h3>
-            </div>
+            <a
+              href="https://raenewsblog.netlify.app/"
+              style={{ textDecoration: "none", color: "black" }}
+              target="_blank"
+            >
+              <div
+                style={{
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                {" "}
+                <Web></Web>
+                <h3>Portfolio</h3>
+              </div>
+            </a>
           </div>
         ) : null}
 
