@@ -8,8 +8,8 @@ import { AuthProvider } from "./auth/Authcontext";
 import Signup from "./auth/Signup";
 import Login from "./auth/Login";
 import Search from "./explore-component/Search";
-import { useState } from "react";
 import { ExploreProvider } from "./explore-component/ExploreContext";
+import About from "./pages/About";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
               <Route path="/login" exact component={Login}></Route>
 
               <Route exact path="/home" component={Home}></Route>
+              <Route path="/about" component={About}></Route>
               <Route exact path="/explore" component={Explore}></Route>
               <Route exact path="/search" component={Search}></Route>
               <Route path="/explore/:id" component={Exploredetail}></Route>

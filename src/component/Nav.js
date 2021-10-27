@@ -15,7 +15,9 @@ const Nav = () => {
         <div className="grid">
           <ul>
             <li>Home</li>
-            <li>About</li>
+            <Link to="/about">
+              <li>About</li>
+            </Link>
             <Link
               to="/explore"
               style={{
