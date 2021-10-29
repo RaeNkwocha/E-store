@@ -3,12 +3,14 @@ import pizzaone from "../images/pizza-one.jpg";
 import pizzatwo from "../images/pizza-two.jpg";
 import pizzathree from "../images/pizza-three.jpg";
 import pizzafour from "../images/pizza-four.jpg";
+import Fade from "react-reveal/Fade";
+
 import "../css/headertwo.css";
 
 const HeaderTwo = () => {
   return (
     <>
-      <section style={{ background: "#32cd32", padding: "30px" }}>
+      <section style={{ background: "#32cd32" }} className="just--bg">
         <section className="header-two-grid">
           <div className="header-two">
             <h2>Quattro Formaggi</h2>
@@ -25,20 +27,42 @@ const HeaderTwo = () => {
               you need while enjoying a delicious meal.{" "}
             </h5>
           </div>
-          <div className="inner-grid">
-            <div className="grid-column-1">
-              {" "}
-              <img src={pizzaone} alt=""></img>
-            </div>
-            <div className="grid-column-2">
-              <img src={pizzatwo} alt=""></img>
-            </div>
-            <div className="grid-column-3">
-              <img src={pizzathree} alt=""></img>
-            </div>
-            <div className="grid-column-4">
-              {" "}
-              <img src={pizzafour} alt=""></img>
+          <div className="container">
+            <div className="gallery">
+              <Fade left>
+                <figure className="gallery__item gallery__item--1">
+                  <img
+                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="Gallery image 1"
+                    class="gallery__img"
+                  />
+                </figure>
+              </Fade>
+              <Fade top>
+                <figure className="gallery__item gallery__item--2">
+                  <img
+                    src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="Gallery image 2"
+                    class="gallery__img"
+                  />
+                </figure>
+              </Fade>
+              <Fade right>
+                <figure className="gallery__item gallery__item--3">
+                  <img
+                    src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="Gallery image 3"
+                    class="gallery__img"
+                  />
+                </figure>
+              </Fade>
+              <figure className="gallery__item gallery__item--4">
+                <img
+                  src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  alt="Gallery image 4"
+                  class="gallery__img"
+                />
+              </figure>
             </div>
           </div>
         </section>
