@@ -7,12 +7,8 @@ import "swiper/components/thumbs/thumbs.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import {
-  Bookmark,
-  GitHub,
   HomeOutlined,
-  Instagram,
   Menu,
-  Person,
   RoomServiceOutlined,
   Web,
   Work,
@@ -29,8 +25,7 @@ import Footer from "../component/Footer";
 SwiperCore.use([Navigation, Thumbs]);
 
 const About = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const handleNav = () => {
     setOpen(!open);
   };
@@ -97,6 +92,7 @@ const About = () => {
               href="https://raenewsblog.netlify.app/"
               style={{ textDecoration: "none", color: "black" }}
               target="_blank"
+              rel="noreferrer"
             >
               <div
                 style={{
