@@ -12,10 +12,18 @@ const Nav = () => {
       </div>
       <nav className="nav">
         <h3>Raen.Recipies</h3>
-        <div className="grid">
+        <div>
           <ul>
-            <li>Home</li>
-            <Link to="/about">
+            <Link
+              to="/home"
+              style={{ cursor: "pointer", textDecoration: "none" }}
+            >
+              <li>Home</li>
+            </Link>
+            <Link
+              to="/about"
+              style={{ cursor: "pointer", textDecoration: "none" }}
+            >
               <li>About</li>
             </Link>
             <Link
@@ -23,12 +31,11 @@ const Nav = () => {
               style={{
                 listStyle: "none",
                 textDecoration: "none",
-                color: "black",
+                cursor: "pointer",
               }}
             >
               <li>Explore</li>
             </Link>
-            <li>Our servies</li>
           </ul>
         </div>
 

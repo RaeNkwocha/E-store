@@ -1,5 +1,6 @@
 import {
   Bookmark,
+  Explore,
   GitHub,
   HomeOutlined,
   Instagram,
@@ -119,7 +120,7 @@ const Explorenav = () => {
             >
               <TextField
                 value={search}
-                style={{ padding: "10px" }}
+                style={{ padding: "10px", background: "whitesmoke" }}
                 onChange={(e) => setSearch(e.target.value)}
                 fullWidth
                 label="search for a recipe"
@@ -167,7 +168,14 @@ const Explorenav = () => {
       <section className="explore-nav-2">
         {open ? (
           <div className="explore-block">
-            <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
+            <Link
+              to="/home"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                cursor: "pointer",
+              }}
+            >
               <div
                 style={{
                   cursor: "pointer",
@@ -180,28 +188,45 @@ const Explorenav = () => {
                 <h3>Home</h3>
               </div>
             </Link>
-            <div
+            <Link
+              to="/explore"
               style={{
+                textDecoration: "none",
+                color: "black",
                 cursor: "pointer",
-                display: "grid",
-                placeItems: "center",
               }}
             >
-              {" "}
-              <Work></Work>
-              <h3>About</h3>
-            </div>
-            <div
+              <div
+                style={{
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                <Explore></Explore>
+                <h3>Explore</h3>
+              </div>
+            </Link>
+            <Link
+              to="/about"
               style={{
+                textDecoration: "none",
+                color: "black",
                 cursor: "pointer",
-                display: "grid",
-                placeItems: "center",
               }}
             >
-              {" "}
-              <RoomServiceOutlined></RoomServiceOutlined>
-              <h3>Services</h3>
-            </div>
+              <div
+                style={{
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                <Work></Work>
+                <h3>About</h3>
+              </div>
+            </Link>
+
             <a
               href="https://raenewsblog.netlify.app/"
               style={{ textDecoration: "none", color: "black" }}

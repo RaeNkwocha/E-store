@@ -38,16 +38,6 @@ const Hamburger = () => {
           </Link>
 
           <Link
-            to="/contact"
-            style={{
-              listStyle: "none",
-              textDecoration: "none",
-              color: "black",
-            }}
-          >
-            <li>Contact</li>
-          </Link>
-          <Link
             to="/explore"
             style={{
               listStyle: "none",

@@ -7,6 +7,7 @@ import "swiper/components/thumbs/thumbs.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import {
+  Explore,
   HomeOutlined,
   Menu,
   RoomServiceOutlined,
@@ -66,28 +67,45 @@ const About = () => {
                 <h3>Home</h3>
               </div>
             </Link>
-            <div
+            <Link
+              to="/about"
               style={{
+                textDecoration: "none",
+                color: "black",
                 cursor: "pointer",
-                display: "grid",
-                placeItems: "center",
               }}
             >
-              {" "}
-              <Work></Work>
-              <h3>About</h3>
-            </div>
-            <div
+              <div
+                style={{
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                <Work></Work>
+                <h3>About</h3>
+              </div>
+            </Link>
+            <Link
+              to="/explore"
               style={{
+                textDecoration: "none",
+                color: "black",
                 cursor: "pointer",
-                display: "grid",
-                placeItems: "center",
               }}
             >
-              {" "}
-              <RoomServiceOutlined></RoomServiceOutlined>
-              <h3>Services</h3>
-            </div>
+              <div
+                style={{
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+              >
+                <Explore></Explore>
+                <h3>Explore</h3>
+              </div>
+            </Link>
+
             <a
               href="https://raenewsblog.netlify.app/"
               style={{ textDecoration: "none", color: "black" }}

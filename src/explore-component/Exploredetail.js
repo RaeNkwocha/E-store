@@ -125,7 +125,7 @@ const Exploredetail = ({ match }) => {
             >
               <TextField
                 value={search}
-                style={{ padding: "10px" }}
+                style={{ padding: "10px", background: "whitesmoke" }}
                 onChange={(e) => setSearch(e.target.value)}
                 fullWidth
                 label="search for a recipe"
