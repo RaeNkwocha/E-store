@@ -37,9 +37,10 @@ const Contactme = () => {
           <h3>If Not Now, When? Let’s Work Together!</h3>
 
           <p>
-            Consectetur adipiscing elit, sed do eiusmod tempor ididunt ut labore
-            et dolore magna aliqua. Quis ipsum suspendisces gravida. Risus
-            commodo viverra.
+            Are you looking for a web developer to take your ideas and make them
+            a reality. Feel free to contact me a frontEnd developer who would
+            build scalable web apps using recent technologies to satisfy your
+            needs.
           </p>
         </div>
         <div className="contact-container">
